@@ -29,7 +29,7 @@ galaxy_info:
     - xenial
 
 dependencies:
-  - role: govc
+  - { role: vmware.ansible-role-govc }
 #    assets:
 #      "vic.ova":
 #        description: vic OVA

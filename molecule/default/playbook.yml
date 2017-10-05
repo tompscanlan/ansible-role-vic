@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    vic_version: "1.2.0"
+    vic_download_url: "https://storage.googleapis.com/vic-engine-releases/{{ vic_tarball_name }}"
+  roles:
+    - role: ansible-role-vic

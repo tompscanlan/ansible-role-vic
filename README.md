@@ -180,6 +180,14 @@ Including an example of how to use your role (for instance, with variables passe
 
 ```
 
+## To run tests:
+```bash
+
+pip install -r requirements.txt
+
+
+```
+
 ## License
 
 Copyright © 2017 VMware, Inc. All Rights Reserved.

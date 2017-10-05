@@ -17,7 +17,7 @@ vic_download_url: "https://bintray.com/vmware/vic/download_file?file_path={{ vic
 vic_ova_path: /tmp/vic.ova
 
 # Temporary storage for downloads
-vic_tmp: /tmp/vic
+vic_tmp: /tmp
 
 # validate certs for the url we download vic from?
 vic_download_validate_certs: False

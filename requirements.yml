@@ -1,3 +1,0 @@
----
-- name: govc
-  src: git+https://github.com/vmware/ansible-role-govc

@@ -1,0 +1,27 @@
+vic_ova_path: /mnt/vic.ova
+
+password: "VMware1!"
+vic_network_fqdn: vic.home.local
+vic_network_searchpath: home.local
+vic_network_dns: 192.168.1.17
+vic_network_gateway: 192.168.1.254
+vic_network_netmask0: 255.255.255.0
+vic_network_ip0: 192.168.1.66
+vic_permit_root_login: True
+vic_root_password: "{{ password }}"
+vic_registry_db_password: "{{ password }}"
+vic_registry_admin_password: "{{ password }}"
+
+vic_datastore: "VMwareVMs"
+image_store: "VMwareVMs"
+
+
+vic_network: "vic-public"
+
+mgmt_vc_username: administrator@vsphere.local
+mgmt_vc_password: "{{ password }}"
+mgmt_vc: vcenter.home.local
+mgmt_vc_datacenter: Goddard
+mgmt_vc_cluster: Home
+mgmt_vc_thumbprint: "03:8B:53:9A:A2:6D:AE:79:56:13:44:A2:32:5A:03:7E:DA:80:F1:1F"
+vic_download_url: "https://{{ vic_network_ip0 }}:9443/vic_{{ vic_version }}.tar.gz"
