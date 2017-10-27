@@ -23,7 +23,7 @@
   when: ova_fileserver_output | succeeded
 
 
-#- debug: var=ova_fileserver_output
+# - debug: var=ova_fileserver_output
 
 - name: Is VIC file server running?
   debug:

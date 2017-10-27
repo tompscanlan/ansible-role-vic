@@ -16,7 +16,7 @@ platforms:
     privileged: true
     command: /usr/lib/systemd/systemd
     volumes:
-      - /Users/tscanlan/Downloads/VMware-VCSA-all-6.5.0-5973321.iso:/vcsa.iso:ro
+      - /Users/tscanlan/Downloads/vic-v1.1.0-bf760ea2.ova:/mnt/vic.ova:ro
 
   - name: centos-7
     groups:
@@ -25,7 +25,7 @@ platforms:
     privileged: true
     command: /usr/lib/systemd/systemd
     volumes:
-      - /Users/tscanlan/Downloads/VMware-VCSA-all-6.5.0-5973321.iso:/vcsa.iso:ro
+      - /Users/tscanlan/Downloads/vic-v1.1.0-bf760ea2.ova:/mnt/vic.ova:ro
 
   - name: ubuntu-xenial
     groups:
@@ -34,7 +34,7 @@ platforms:
     privileged: true
     command: /lib/systemd/systemd
     volumes:
-      - /Users/tscanlan/Downloads/VMware-VCSA-all-6.5.0-5973321.iso:/vcsa.iso:ro
+      - /Users/tscanlan/Downloads/vic-v1.1.0-bf760ea2.ova:/mnt/vic.ova:ro
 
   - name: ubuntu-precise
     groups:
@@ -43,7 +43,7 @@ platforms:
     command: /sbin/init
     privileged: true
     volumes:
-      - /Users/tscanlan/Downloads/VMware-VCSA-all-6.5.0-5973321.iso:/vcsa.iso:ro
+      - /Users/tscanlan/Downloads/vic-v1.1.0-bf760ea2.ova:/mnt/vic.ova:ro
 
 provisioner:
   name: ansible
@@ -54,7 +54,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  name: default
+  name: install-1.1.0-ova
   test_sequence:
     - create
     - dependency

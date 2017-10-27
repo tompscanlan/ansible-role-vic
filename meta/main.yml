@@ -1,6 +1,6 @@
 # Copyright © 2017 VMware, Inc. All Rights Reserved.
 # SPDX-License-Identifier: MIT
-
+---
 galaxy_info:
   author: Tom Scanlan
   description: Install and manage vSphere Integrated Containers
@@ -10,23 +10,23 @@ galaxy_info:
 
   platforms:
 
-  - name: GenericLinux
-    versions:
-    - any
+    - name: GenericLinux
+      versions:
+        - any
 
-  - name: Fedora
-    versions:
-    - 24
+    - name: Fedora
+      versions:
+        - 24
 
-  - name: EL
-    versions:
-    - 7
+    - name: EL
+      versions:
+        - 7
 
-  - name: Ubuntu
-    versions:
-    - trusty
-    - precise
-    - xenial
+    - name: Ubuntu
+      versions:
+        - trusty
+        - precise
+        - xenial
 
 dependencies:
   - { role: vmware.ansible-role-govc }

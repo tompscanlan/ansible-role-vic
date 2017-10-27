@@ -1,6 +1,8 @@
 # Copyright © 2017 VMware, Inc. All Rights Reserved.
 # SPDX-License-Identifier: MIT
 ---
+
+
 - name: Check for VCH existance
   shell: "{{ lookup('template', './list.j2', item=item) }}"
   with_items: "{{ vic_controller_hosts }}"
@@ -10,7 +12,10 @@
   tags:
     - skip_ansible_lint
 
-- debug: msg={{vic_vch_list.results}}
+- debug:
+    msg: "{{ lookup('template', './create.j2', item=item) }} --bootstrap-iso {{ vic_install_path }}/vic/bootstrap.iso --appliance-iso {{ vic_install_path }}/vic/appliance.iso"
+  when: item.item.name not in item.stdout
+  with_items: "{{ vic_vch_list.results }}"
 
 - name: Create all VCHs
   command: "{{ lookup('template', './create.j2', item=item) }} --bootstrap-iso {{ vic_install_path }}/vic/bootstrap.iso --appliance-iso {{ vic_install_path }}/vic/appliance.iso"

@@ -185,6 +185,11 @@ Including an example of how to use your role (for instance, with variables passe
 
 pip install -r requirements.txt
 
+# capture the tumbprint of your esx host or vcenter server:
+openssl s_client -connect vcenter.home.local:443   < /dev/null 2>/dev/null | openssl x509 -fingerprint -noout -in /dev/stdin"
+
+# save that thumbprint in `molecule/inventory/group_vars/vcsa.yml` as var `mgmt_vc_thumbprint`
+
 
 ```
 

@@ -1,0 +1,16 @@
+---
+- name: Converge
+  hosts: vcsa
+  vars:
+    vic_version: "remove"
+    vic_vch_delete: True
+    vic_controller_hosts:
+      - name: test1
+        timeout: 5m
+        target: "https://{{ mgmt_vc }}/{{ mgmt_vc_datacenter }}"
+        user: "{{ mgmt_vc_username }}"
+        password: "{{ password }}"
+        thumbprint: "{{ mgmt_vc_thumbprint }}"
+
+  roles:
+    - role: ansible-role-vic

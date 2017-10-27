@@ -8,7 +8,7 @@
   register: vic_version_found
   changed_when: false
 
-#- debug: msg="{{ vic_version_found }}"
+# - debug: msg="{{ vic_version_found }}"
 
 - block:
 

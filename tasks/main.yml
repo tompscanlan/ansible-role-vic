@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: MIT
 ---
 
-
 - name: Include OS specific vars
   include_vars: "{{ ansible_system | lower }}.yml"
 
@@ -12,7 +11,7 @@
   register: vic_version_found
   changed_when: false
 
-#- debug: var=vic_version_found
+# - debug: var=vic_version_found
 
 - include: install-ova.yml
   when: vic_version != "remove"
@@ -21,12 +20,13 @@
   when: vic_version != "remove"
 
 - include: vic-create.yml
-
+  when: vic_version != "remove"
 # doesn't work yet.
-#- include: vic-delete.yml
-#  when: vic_vch_delete
+- include: vic-delete.yml
+  when: vic_vch_delete
 
 - include: uninstall-vic-engine.yml
   when: vic_version == "remove"
 
 - include: services-up.yml
+  when: vic_version != "remove"

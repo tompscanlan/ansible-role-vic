@@ -1,0 +1,9 @@
+# Copyright © 2017 VMware, Inc. All Rights Reserved.
+# SPDX-License-Identifier: MIT
+---
+
+- name: Get the certificate fingerprint from the deploy host
+  command: "openssl s_client -connect vcenter.home.local:443   < /dev/null 2>/dev/null | openssl x509 -fingerprint -noout -in /dev/stdin"
+  ignore_errors: yes
+  register: vic_version_found
+  changed_when: false

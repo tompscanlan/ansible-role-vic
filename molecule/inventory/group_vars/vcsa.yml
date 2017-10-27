@@ -1,3 +1,4 @@
+---
 vic_ova_path: /mnt/vic.ova
 
 password: "VMware1!"
@@ -16,12 +17,12 @@ vic_datastore: "VMwareVMs"
 image_store: "VMwareVMs"
 
 
-vic_network: "vic-public"
+vic_network: "Public"
 
 mgmt_vc_username: administrator@vsphere.local
 mgmt_vc_password: "{{ password }}"
 mgmt_vc: vcenter.home.local
 mgmt_vc_datacenter: Goddard
 mgmt_vc_cluster: Home
-mgmt_vc_thumbprint: "03:8B:53:9A:A2:6D:AE:79:56:13:44:A2:32:5A:03:7E:DA:80:F1:1F"
+mgmt_vc_thumbprint: "06:AE:8D:80:A6:88:7E:6B:D3:74:85:F2:93:B6:92:9E:4C:99:8C:1D"
 vic_download_url: "https://{{ vic_network_ip0 }}:9443/vic_{{ vic_version }}.tar.gz"
